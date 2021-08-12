@@ -1,12 +1,15 @@
 package ca.shubbar.spring5app.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
  * @author Mustafa <codingbox@outlook.com>
  * Created at 2021-08-11
  */
+
+// Making it as a JPA entity
 @Entity
 
 public class Author {
@@ -18,15 +21,14 @@ public class Author {
     private String lastName;
 
     @ManyToMany(mappedBy = "authors")
-    private Set<Book> books;
+    private Set<Book> books = new HashSet<>();
 
     public Author() {
     }
 
-    public Author(String firstName, String lastName, Set<Book> books) {
+    public Author(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.books = books;
     }
 
     public Long getId() {
