@@ -6,7 +6,7 @@
     <title>Spring Framework | Books library project</title>
 </head>
 <body>
-    <h1>Book List</h1>
+    <h1>Authors List</h1>
     <hr>
     <table class="table">
         <tr>
@@ -14,16 +14,16 @@
                 ID
             </th>
             <th>
-                Title
+                First Name
             </th>
             <th>
-                Publisher
+                Last Name
             </th>
         </tr>
-        <tr th:each="book : ${books}">
-            <td th:text="${book.id}">123</td>
-            <td th:text="${book.title}">Spring in Action</td>
-            <td th:text="${book.publisher.name}">Mustafa</td>
+        <tr th:each="author : ${authors}">
+            <td th:text="${author.id}">123</td>
+            <td th:text="${author.firstName}">Spring in Action</td>
+            <td th:text="${author.lastName}">Mustafa</td>
         </tr>
     </table>
 
